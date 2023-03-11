@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" value="Ethan Hunt"><br>
+
+    <select name="countries" id="countries">
+        <option value="India">India</option>
+        <option value="Germany">Germany</option>
+        <option value="Netherlands">Netherlands</option>
+    </select>
+
+    <button py-click="sub()">submit</button>
+ 
+    <p>Output:</p>
+    <p id = 'output'></p>
+    <py-script>
+        def sub():
+            result_place = Element('output')
+            # id で要素を指定して、その中の情報を取得
+            result_place.write(f"{Element('name').value} is a good human from {Element('countries').value}")
+    </py-script>
+    
+</body>
+</html>
